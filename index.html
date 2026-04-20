@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redirect Jenkins...</title>
+<script>
+  (function() {
+    // === CONFIGURAZIONE ===
+    var INTERNAL_HOST = "https://itstezmec01"; // host Jenkins interno (no slash finale)
+
+    // Prende tutto il path+query+hash dell'URL corrente e lo incolla sull'host interno
+    // Es: /jenkins/job/test/job/TestRepo/.../11/  →  https://itstezmec01/jenkins/job/test/...
+    var path = window.location.pathname + window.location.search + window.location.hash;
+    var target = INTERNAL_HOST + path;
+
+    window.location.replace(target);
+  })();
+</script>
+</head>
+<body>
+<style>
+  body{font-family:system-ui,sans-serif;background:#1c1b19;color:#cdccca;display:flex;align-items:center;justify-content:center;min-height:100dvh;margin:0;}
+  .box{background:#232220;border:1px solid #393836;border-radius:12px;padding:2rem;max-width:480px;text-align:center;}
+  code{background:#393836;padding:.15rem .45rem;border-radius:4px;font-size:.82rem;color:#4f98a3;word-break:break-all;}
+</style>
+<div class="box">
+  <p style="font-size:1.5rem;margin-bottom:.75rem">&#x1F504;</p>
+  <strong>Redirect in corso&hellip;</strong>
+  <p style="margin-top:.6rem;font-size:.9rem;color:#797876;">
+    Stai per essere reindirizzato al server Jenkins interno.<br>
+    Assicurati di essere connesso alla rete aziendale o alla VPN.<br><br>
+    Se il redirect non parte automaticamente, abilita JavaScript.
+  </p>
+</div>
+</body>
+</html>
