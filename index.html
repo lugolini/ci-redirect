@@ -6,7 +6,6 @@
 <title>Redirect Jenkins...</title>
 <script>
   (function() {
-<<<<<<< HEAD
     var INTERNAL_HOST = "https://itstezmec01"; // <-- host Jenkins interno
 
     // Legge il parametro "p" dalla query string
@@ -19,21 +18,6 @@
       if (p.charAt(0) !== "/") p = "/" + p;
       window.location.replace(INTERNAL_HOST + p);
     }
-=======
-    // === CONFIGURAZIONE ===
-    var INTERNAL_HOST  = "https://itstezmec01"; // host Jenkins interno (no slash finale)
-    var STRIP_PREFIX   = "/ci-redirect";        // nome del repo GitHub Pages (no slash finale)
-
-    var path = window.location.pathname + window.location.search + window.location.hash;
-
-    // Rimuove il prefisso del repo se presente
-    if (path.indexOf(STRIP_PREFIX) === 0) {
-      path = path.slice(STRIP_PREFIX.length);
-    }
-
-    var target = INTERNAL_HOST + path;
-    window.location.replace(target);
->>>>>>> e9da931092aaf92d587940e03ebbc4d6990c40fa
   })();
 </script>
 </head>
@@ -48,12 +32,8 @@
   <strong>Redirect in corso&hellip;</strong>
   <p style="margin-top:.6rem;font-size:.9rem;color:#797876;">
     Stai per essere reindirizzato al server Jenkins interno.<br>
-<<<<<<< HEAD
     Assicurati di essere connesso alla rete aziendale o alla VPN.<br><br>
     Se il redirect non parte, manca il parametro <code>?p=</code> nell&rsquo;URL.
-=======
-    Assicurati di essere connesso alla rete aziendale o alla VPN.
->>>>>>> e9da931092aaf92d587940e03ebbc4d6990c40fa
   </p>
 </div>
 </body>
